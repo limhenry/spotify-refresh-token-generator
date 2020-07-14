@@ -2,7 +2,7 @@
 
 A simple webapp to generate Spotify Refresh Token in a few clicks.
 
-🚀 Try it out: [spotify-refresh-token-generator.netlify.app](https://spotify-refresh-token-generator.netlify.app)
+**Try it out:** [spotify-refresh-token-generator.netlify.app](https://spotify-refresh-token-generator.netlify.app)
 
 ![](https://i.imgur.com/NCL1CCJ.png)
 ![](https://i.imgur.com/qF6FPuE.png)
