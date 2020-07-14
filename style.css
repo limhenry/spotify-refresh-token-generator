@@ -25,6 +25,10 @@ footer {
   text-align: center;
   opacity: 0.75;
 }
+footer a {
+  text-decoration: underline;
+  color: var(--secondary-text-color);
+}
 .page {
   flex: 1;
   display: flex;

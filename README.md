@@ -1,6 +1,6 @@
 # Spotify Refresh Token Generator
 
-> A simple webapp to generate Spotify Refresh Token in a few clicks.
+A simple webapp to generate Spotify Refresh Token in a few clicks.
 
 ![](https://i.imgur.com/NCL1CCJ.png)
 ![](https://i.imgur.com/qF6FPuE.png)
