@@ -117,6 +117,12 @@ const clearLocalStorage = () => {
   localStorage.removeItem('scopes')
 }
 
+const copyToken = () => {
+  const textarea = document.querySelector('.refresh-token')
+  textarea.select()
+  document.execCommand("copy")
+}
+
 (async function() {
   document.querySelector('.dashboard-url').textContent = location.origin
   document.querySelector('input#redirectUri').value = location.origin
