@@ -118,6 +118,8 @@ const clearLocalStorage = () => {
 }
 
 (async function() {
+  document.querySelector('.dashboard-url').textContent = location.origin
+  document.querySelector('input#redirectUri').value = location.origin
   const clientId = localStorage.getItem('clientId')
   const clientSecret = localStorage.getItem('clientSecret')
   const redirectUrl = localStorage.getItem('redirectUrl')
@@ -141,7 +143,6 @@ const clearLocalStorage = () => {
     await getRefreshToken(accessCode)
   } else {
     const hash = window.location.hash.substring(1)
-    console.log(hash)
     changePage(hash || 'welcome')
     if (hash === 'info') return
     clearLocalStorage()
