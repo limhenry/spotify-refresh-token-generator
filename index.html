@@ -1,0 +1,95 @@
+<html>
+  <title>Spotify Refresh Token Generator</title>
+  <link rel="stylesheet" href="./style.css">
+  <body>
+    <div class="page">
+      <div class="view" id="welcome">
+        <h2 class="fade-in">Get your Spotify Refresh Token in a few steps</h2>
+        <h1 class="fade-in">Welcome to Spotify Refresh Token Generator</h1>
+        <div
+          class="button fade-in delay"
+          role="button"
+          tabindex="0"
+          onclick="changePage('dashboard')"
+        >Get Started</div>
+      </div>
+      <div class="view" id="dashboard">
+        <h3 class="fade-in">Get your Spotify App Settings Data</h3>
+        <p class="fade-in">
+          Visit your Spotify Developers Dashboard then select or create your app. <br />
+          Note down your <b>Client ID</b>, <b>Client Secret</b> to use in next step,<br />
+          and set the Redirect URI to <code>http://localhost:8081/</code>.</p>
+        <div
+          class="button fade-in delay"
+          role="button"
+          tabindex="0"
+          onclick="openDashboard()"
+        >Open Spotify Developers Dashboard</div>
+        <div
+          class="button-link fade-in delay"
+          onclick="changePage('info')"
+        >Already got the required data? Skip this step</div>
+      </div>
+      <div class="view" id="info">
+        <h3 class="fade-in">Enter your Spotify App Settings Data</h3>
+        <div class="form slide-in delay">
+          <div class="input">
+            <label>Client ID</label>
+            <input type="text" name="clientId" id="clientId">
+          </div>
+          <div class="input">
+            <label>Client Secret</label>
+            <input type="password" name="clientSecret" id="clientSecret">
+          </div>
+          <div class="input">
+            <label>Redirect URI</label>
+            <input type="text" name="redirectUri" id="redirectUri" value="http://localhost:8081/">
+          </div>
+          <div class="input">
+            <label>
+              <span>Scopes </span>
+              <a
+                href="https://developer.spotify.com/documentation/general/guides/scopes/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                  <path id="path" d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"/>
+                </svg>
+              </a>
+            </label>
+            <div class="scope-checkbox"></div>
+          </div>
+        </div>
+        <div
+          class="button fade-in delay"
+          role="button"
+          tabindex="0"
+          onclick="getAcccessCode()"
+        >Get Spotify Access Code</div>
+        <div
+          class="button-link fade-in delay"
+          onclick="changePage('dashboard')"
+        >Go Back</div>
+      </div>
+      <div class="view" id="refresh">
+        <h3 class="fade-in">Here's your Spotify Refresh Token</h3>
+        <p class="fade-in">Save this refresh token in a safe, private place. This token will last for a very long time and can be used to generate a fresh <code>access_token</code> whenever it is needed.</p>
+        <textarea class="refresh-token" rows="1"></textarea>
+        <div
+          class="button fade-in delay"
+          role="button"
+          tabindex="0"
+        >Copy Refresh Token to Clipboard</div>
+        <div
+          class="button-link fade-in delay"
+          onclick="changePage('welcome')"
+        >Start Again</div>
+      </div>
+    </div>
+    <footer>&copy; Henry Lim 2020. This site is not affiliated with Spotify. View source on GitHub.</footer>
+  </body>
+
+  <script src="./main.js"></script>
+</html>

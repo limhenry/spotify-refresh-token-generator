@@ -1,0 +1,211 @@
+* {
+  box-sizing: border-box;
+  --background-color: #202124;
+  --primary-text-color: #e8eaed;
+  --secondary-text-color: #9aa0a6;
+  --button-color: #44ce75;
+  --button-hover-color: #2fc062;
+  --button-text-color: #202124;
+  --form-label-color: #cbccce;
+  --animation-delay: 0;
+}
+body {
+  font-family: sans-serif;
+  background-color: var(--background-color);
+  min-height: 100vh;
+  margin: 0;
+  outline-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+footer {
+  color: var(--secondary-text-color);
+  font-size: 12px;
+  padding: 8px 0;
+  text-align: center;
+  opacity: 0.75;
+}
+.page {
+  flex: 1;
+  display: flex;
+  padding: 0 24px;
+}
+.view {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  max-width: 720px;
+  margin: auto;
+  padding: 48px 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+.view[active] {
+  display: flex;
+}
+.view[active] .fade-in {
+  animation-delay: var(--animation-delay, 0);
+  animation-duration: 200ms;
+  animation-fill-mode: forwards;
+  animation-name: fade-in;
+  animation-timing-function: ease-in;
+  opacity: 0;
+}
+.view[active] .fade-in.delay {
+  --animation-delay: 150ms;
+}
+.view[active] .slide-in {
+  animation-delay: 150ms;
+  animation-duration: 200ms;
+  animation-fill-mode: forwards;
+  animation-name: slide-in, fade-in;
+  animation-timing-function: ease;
+  transform: translateX(30px);
+  opacity: 0;
+}
+h1 {
+  color: var(--primary-text-color);
+  font-size: 48px;
+  margin-bottom: 56px;
+  margin-top: 24px;
+}
+h2 {
+  color: var(--secondary-text-color);
+  font-size: 24px;
+  margin: 0;
+}
+h3 {
+  color: var(--primary-text-color);
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+p {
+  color: var(--secondary-text-color);
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 36px;
+}
+p code,
+p b {
+  font-weight: 700;
+  color: #fff;
+}
+.button {
+  padding: 12px 24px;
+  text-align: center;
+  white-space: nowrap;
+  min-width: 256px;
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  line-height: 24px;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: var(--button-hover-color);
+}
+.button-link {
+  font-weight: 600;
+  margin-top: 24px;
+  color: var(--button-color);
+  cursor: pointer;
+}
+.button-link:hover {
+  color: var(--button-hover-color);
+}
+.form {
+  margin: 24px 0;
+  width: 100%;
+}
+.form .input {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 24px;
+}
+.form .input label {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 4px;
+  color: var(--form-label-color);
+  display: flex;
+  align-items: center;
+}
+.form .input label a svg {
+  margin-left: 4px;
+  width: 16px;
+  height: 16px;
+  fill: var(--form-label-color);
+}
+.form .input label a svg #path {
+  stroke: var(--form-label-color);
+  stroke-width: 0.5px;
+}
+.form .input input {
+  color: #fff;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--form-label-color);
+  padding: 8px 0;
+  color: #fff;
+  font-size: 18px;
+}
+.form .input input:focus {
+  outline: none;
+  border-color: var(--button-color);
+}
+.form .scope-checkbox {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-gap: 12px;
+  margin-top: 12px;
+}
+.form .scope-checkbox .input {
+  flex-direction: row;
+  margin: 0;
+  cursor: pointer;
+}
+.form .scope-checkbox .input input {
+  margin-right: 8px;
+  margin-left: 0px;
+}
+.refresh-token {
+  resize: none;
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  line-height: 20px;
+  padding: 8px 0;
+  background: #0000;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid var(--form-label-color);
+  margin: 24px 0;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(30px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
